@@ -7,6 +7,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
+extern char **environ;
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 

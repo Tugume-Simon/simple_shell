@@ -11,7 +11,6 @@ int main(void)
 	size_t n;
 	pid_t child;
 	int status;
-	extern char **environ;
 	char *argv[] = {NULL, NULL, NULL, NULL};
 
 	child = fork();

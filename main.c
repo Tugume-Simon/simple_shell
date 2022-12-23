@@ -11,6 +11,7 @@ int main(void)
 	size_t n;
 	pid_t child;
 	int status;
+	extern char **environ;
 	char *argv[] = {NULL, NULL, NULL, NULL};
 
 	child = fork();
@@ -31,7 +32,7 @@ int main(void)
 			continue;
 		if (*argv[0] != '\n')
 		{
-			if (execve(argv[0], argv, NULL) == -1)
+			if (execve(argv[0], argv, environ) == -1)
 			{
 				perror("Error");
 			}

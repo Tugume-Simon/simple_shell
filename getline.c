@@ -34,14 +34,14 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 	{
 		if (c == EOF)
 			return (EOF);
-		*lineptr = _realloc(*lineptr, i, sizeof(char) * (i + 1));
+		*lineptr = realloc(*lineptr, sizeof(char) * (i + 1));
 		(*lineptr)[i] = c;
 		(*n)++;
 		i++;
 	}
 	if (i == 0)
 	{
-		*lineptr = _realloc(*lineptr, i, sizeof(char) * (i + 1));
+		*lineptr = realloc(*lineptr, sizeof(char) * (i + 1));
 		(*lineptr)[i] = '\n';
 	}
 
